@@ -46,7 +46,7 @@ const About = () => {
       </div>
 
       {/* Images side */}
-      <div className="w-full md:w-1/2 overflow-hidden bg-red-500">
+      <div className="w-full md:w-1/2 overflow-hidden ">
         <motion.div
           initial={{ y: 0 }}
           animate={{ y: "-50%" }}

@@ -14,6 +14,7 @@ const App = () => {
       <Navbar />
       <main className="flex-grow">
         <ReactFullpage
+        licenseKey={'gplv3-license'}
           scrollingSpeed={700}
           navigation
           anchors={["home", "about", "works", "services", "contact"]} // URL anchors
