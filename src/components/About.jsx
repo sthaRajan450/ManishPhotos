@@ -2,25 +2,20 @@ import React from "react";
 import { motion } from "motion/react";
 
 const images = [
-  "/images/bhagwatiJatra.jpg",
   "/images/childrens.JPG",
   "/images/city.jpg",
   "/images/dailylife1.jpg",
   "/images/dailylife2.jpg",
   "/images/drone.JPG",
-  "/images/fire.jpg",
-  "/images/landscape.png",
+  "/images/landscape.jpg",
   "/images/lgbtqi.JPG",
   "/images/lifestyle1.jpg",
   "/images/lifestyle2.jpg",
   "/images/monk.jpg",
-  "/images/peoples.jpg",
   "/images/person.jpg",
-  "/images/ping.jpg",
   "/images/protest1.jpg",
   "/images/protest2.jpg",
   "/images/protest3.jpg",
-  "/images/scenery.JPG",
 ];
 
 const About = () => {
