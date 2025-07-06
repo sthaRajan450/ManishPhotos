@@ -5,20 +5,21 @@ const images = [
   "/images/childrens.JPG",
   "/images/city.jpg",
   "/images/dailylife1.jpg",
-  "/images/dailylife2.jpg",
   "/images/drone.JPG",
-  "/images/landscape.jpg",
-  "/images/lgbtqi.JPG",
   "/images/lifestyle1.jpg",
+  "/images/landscape.jpg",
+  "/images/dailylife2.jpg",
+  "/images/lgbtqi.JPG",
   "/images/lifestyle2.jpg",
-  "/images/monk.jpg",
-  "/images/person.jpg",
   "/images/protest1.jpg",
+  "/images/monk.jpg",
   "/images/protest2.jpg",
+  "/images/person.jpg",
   "/images/protest3.jpg",
 ];
 
 const About = () => {
+  const doubledImages = [...images, ...images];
   return (
     <div className="w-full h-screen flex flex-col md:flex-row bg-gray-700 overflow-hidden">
       {/* Text side */}
@@ -51,16 +52,18 @@ const About = () => {
             repeat: Infinity,
           }}
           className="flex flex-wrap"
-          style={{ willChange: "transform", transform: "translateZ(0)" }} // add these
+          style={{
+            willChange: "transform",
+            transform: "translateZ(0)",
+          }}
         >
-          {images.map((src, index) => (
+          {doubledImages.map((src, index) => (
             <img
               key={index}
-              className="w-1/2 object-cover"
+              className="w-1/2"
               src={src}
               alt={`img-${index}`}
               loading="lazy"
-              style={{ aspectRatio: "4 / 3" }}
             />
           ))}
         </motion.div>
