@@ -1,27 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { AiFillInstagram } from "react-icons/ai";
 import { IoIosMail } from "react-icons/io";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { FaArrowUp } from "react-icons/fa";
 
 const Footer = () => {
-  const [showTopBtn, setShowTopBtn] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowTopBtn(window.scrollY > 300);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (window.fullpage_api) {
+      window.fullpage_api.moveTo("home");
+    }
   };
 
   return (
-    <footer className="relative bg-gray-900 text-white pt-6 pb-2 px-4">
-      <div className="flex flex-col gap-4 items-start md:items-center md:flex-row justify-between max-w-4xl mx-auto">
+    <footer className="h-screen flex flex-col justify-center items-center bg-gray-900 text-white px-6">
+      <div className="max-w-4xl w-full flex flex-col gap-6 md:flex-row md:items-center justify-between">
         <a
           href="https://www.instagram.com/manishphotos_/"
           target="_blank"
@@ -51,19 +43,18 @@ const Footer = () => {
         </a>
       </div>
 
-      <div className="mt-6 text-center text-sm text-gray-400">
+      <div className="mt-8 text-center text-sm text-gray-400">
         &copy; {new Date().getFullYear()} Manish Photos. All rights reserved.
       </div>
 
-      {showTopBtn && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-6 right-6 p-3 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 transition"
-          aria-label="Scroll to top"
-        >
-          <FaArrowUp />
-        </button>
-      )}
+      {/* Scroll to top button */}
+      <button
+        onClick={scrollToTop}
+        className="mt-8 p-3 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 transition"
+        aria-label="Scroll to top"
+      >
+        <FaArrowUp />
+      </button>
     </footer>
   );
 };

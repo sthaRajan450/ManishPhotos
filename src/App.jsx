@@ -14,19 +14,10 @@ const App = () => {
       <Navbar />
       <main className="flex-grow">
         <ReactFullpage
-        licenseKey={'gplv3-license'}
+          licenseKey={"gplv3-license"}
           scrollingSpeed={700}
           navigation
-          anchors={["home", "about", "works", "services", "contact"]} // URL anchors
-          onLeave={(origin, destination, direction) => {
-            // Optional: do something when leaving a section
-            console.log(
-              "Leaving section",
-              origin.index,
-              "to",
-              destination.index
-            );
-          }}
+          anchors={["home", "about", "works", "services", "contact", "footer"]}
           render={() => (
             <ReactFullpage.Wrapper>
               <div className="section">
@@ -44,11 +35,13 @@ const App = () => {
               <div className="section">
                 <Contact />
               </div>
+              <div className="section">
+                <Footer /> {/* ✅ Moved inside the fullpage wrapper */}
+              </div>
             </ReactFullpage.Wrapper>
           )}
         />
       </main>
-      <Footer />
     </div>
   );
 };
