@@ -16,6 +16,7 @@ const App = () => {
           licenseKey={"gplv3-license"}
           scrollingSpeed={700}
           navigation
+          preventScrollOverflow={true} // <--- Add this line
           anchors={["home", "about", "works", "featured", "contact", "footer"]}
           render={() => (
             <ReactFullpage.Wrapper>
@@ -31,7 +32,6 @@ const App = () => {
               <div className="section">
                 <Featured />
               </div>
-             
               <div className="section">
                 <Footer />
               </div>
