@@ -63,7 +63,7 @@ const Works = () => {
         />
 
         {/* Optional dark overlay */}
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/10"></div>
 
         {/* Caption & Button */}
         <motion.div

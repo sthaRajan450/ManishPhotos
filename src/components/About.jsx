@@ -23,7 +23,7 @@ const About = () => {
         <p className="text-sm md:text-lg leading-relaxed text-gray-200">
           I’m a multimedia journalist and documentary filmmaker from Nepal,
           passionate about telling real stories through images and film. My work
-          has been featured in both national and international media — but more
+          has been featured in both national and international media  but more
           than recognition, what drives me is the chance to connect people to
           Nepal in all its complexity, beauty, and contradiction. Whether I’m
           filming a festival, following a political movement, or documenting a
