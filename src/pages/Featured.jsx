@@ -9,12 +9,12 @@ const workedLogos = [
   {
     src: "/worked/nepallive.png",
     alt: "Nepal Live",
-    link: "https://www.nepallivetoday.com/author/manish-aryal/",
+    link: "http://nepallive.com",
   },
   {
     src: "/worked/neapllivetoday.webp",
     alt: "Nepal Live Today",
-    link: "https://www.nepallivetoday.com/",
+    link: "https://www.nepallivetoday.com/author/manish-aryal/",
   },
   {
     src: "/worked/npl.png",
