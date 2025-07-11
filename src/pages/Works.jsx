@@ -3,10 +3,7 @@ import { motion } from "motion/react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
 const images = [
-  // "/images/childrens.JPG",
-  // "/images/city.jpg",
   "/images/dailylife1.jpg",
-  // "/images/dailylife2.jpg",
   "/images/drone.JPG",
   "/images/landscape.jpg",
   "/images/lgbtqi.JPG",
@@ -18,11 +15,9 @@ const images = [
   "/images/protest2.jpg",
   "/images/protest3.jpg",
 ];
+
 const captions = [
-  // "Children's Joy",
-  // "Urban Landscape",
   "Daily Life Moment 1",
-  // "Daily Life Moment 2",
   "Drone Shot of Nepal",
   "Mountain Landscape",
   "LGBTQI+ Event",
@@ -37,7 +32,7 @@ const captions = [
 
 const Works = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(0); // -1 for left, 1 for right
+  const [direction, setDirection] = useState(0);
 
   const goLeft = () => {
     setDirection(-1);
@@ -50,16 +45,16 @@ const Works = () => {
   };
 
   return (
-    <div className="w-full h-screen overflow-hidden bg-black relative">
-      {/* Image Slider */}
+    <div className="w-full h-screen relative overflow-hidden bg-black">
+      {/* Image Transition */}
       <motion.div
         key={currentIndex}
         initial={{ opacity: 0, x: direction === 1 ? 100 : -100 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.7 }}
         className="w-full h-full flex items-center justify-center relative"
       >
-        {/* Image */}
+        {/* Background Image */}
         <img
           src={images[currentIndex]}
           alt={`img-${currentIndex}`}
@@ -67,40 +62,39 @@ const Works = () => {
           loading="lazy"
         />
 
-        {/* Dark overlay */}
-        {/* <div className="absolute inset-0 bg-black bg-opacity-30 z-20"></div>  */}
+        {/* Optional dark overlay */}
+        <div className="absolute inset-0 bg-black/50"></div>
 
+        {/* Caption & Button */}
         <motion.div
           key={`caption-${currentIndex}`}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="absolute bottom-10 left-10 text-white z-30"
+          className="absolute bottom-10 left-6 md:left-12 text-white z-30"
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+          <h2 className="text-3xl md:text-6xl font-bold mb-6 drop-shadow-xl">
             {captions[currentIndex]}
           </h2>
-
           <button
-            className="px-6 py-3 text-lg md:text-xl bg-gradient-to-r from-black/80 to-black/60 text-white rounded-full shadow-lg hover:scale-105 transition-all duration-300 hover:from-black hover:to-black"
-            // onClick={() => alert(`Exploring: ${captions[currentIndex]}`)}
+            className="px-6 py-3 text-lg md:text-xl rounded-full bg-white text-black font-medium hover:bg-gray-200 transition-all duration-300"
           >
             Explore More
           </button>
         </motion.div>
       </motion.div>
 
-      {/* Navigation Buttons at bottom-right */}
-      <div className="absolute bottom-8 right-8 z-30 flex gap-4">
+      {/* Navigation Buttons */}
+      <div className="absolute bottom-6 right-6 z-30 flex gap-3">
         <button
           onClick={goLeft}
-          className="text-white text-2xl   shadow-lg transition-all duration-300 hover:scale-110 hover:bg-white/20"
+          className="text-white text-2xl p-3 rounded-full bg-black/50 hover:bg-black/70 transition-all duration-300"
         >
           <FaArrowLeft />
         </button>
         <button
           onClick={goRight}
-          className="text-white text-2xl   shadow-lg transition-all duration-300 hover:scale-110 hover:bg-white/20"
+          className="text-white text-2xl p-3 rounded-full bg-black/50 hover:bg-black/70 transition-all duration-300"
         >
           <FaArrowRight />
         </button>

@@ -33,7 +33,8 @@ const featuredLogos = [
   {
     src: "/featured/setopati.svg",
     alt: "Setopati",
-    link: "https://www.setopati.com/byline/%e0%a4%ae%e0%a4%a8%e0%a4%bf%e0%a4%b7%20%e0%a4%85%e0%a4%b0%e0%a5%8d%e0%a4%af%e0%a4%be%e0%a4%b2",
+    link:
+      "https://www.setopati.com/byline/%e0%a4%ae%e0%a4%a8%e0%a4%bf%e0%a4%b7%20%e0%a4%85%e0%a4%b0%e0%a5%8d%e0%a4%af%e0%a4%be%e0%a4%b2",
   },
   { src: "/featured/ronb.jpg", alt: "RONB" },
 ];
@@ -47,12 +48,12 @@ const Services = () => {
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="transition duration-300 hover:scale-105"
+          className="transition hover:scale-110 duration-300"
         >
           <img
             src={src}
             alt={alt}
-            className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 object-contain"
+            className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain"
           />
         </a>
       ) : (
@@ -60,37 +61,35 @@ const Services = () => {
           key={idx}
           src={src}
           alt={alt}
-          className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 object-contain transition duration-300 hover:scale-105"
+          className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain transition hover:scale-110 duration-300"
         />
       )
     );
 
   return (
-    <div className="w-full min-h-screen bg-white text-black flex flex-col items-center pt-20 justify-center p-6 space-y-16">
+    <div className="w-full h-screen bg-white text-black flex flex-col items-center justify-center p-4 overflow-hidden">
       {/* Previously Worked Section */}
-      <div className="text-center">
-        <h1 className="text-3xl md:text-4xl font-bold mb-8">
+      <div className="text-center mb-8 sm:mb-12 md:mb-16 max-w-5xl w-full">
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 sm:mb-8">
           Previously Worked
         </h1>
-        <div className="flex flex-wrap justify-center gap-6 sm:gap-10 md:gap-12 max-w-5xl mx-auto mb-8">
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 mb-6">
           {renderLogos(workedLogos)}
         </div>
-        <button
-          className="px-5 py-3 text-base md:text-lg bg-black text-white rounded-full shadow-md hover:scale-105 transition duration-300"
-        >
+        <button className="px-4 py-2 text-sm sm:text-base md:text-lg bg-black text-white rounded-full shadow-md hover:scale-105 transition duration-300">
           See More
         </button>
       </div>
 
       {/* Featured In Section */}
-      <div className="text-center">
-        <h1 className="text-3xl md:text-4xl font-bold mb-8">Work Featured In</h1>
-        <div className="flex flex-wrap justify-center gap-6 sm:gap-10 md:gap-12 max-w-5xl mx-auto mb-8">
+      <div className="text-center max-w-5xl w-full">
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 sm:mb-8">
+          Work Featured In
+        </h1>
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 mb-6">
           {renderLogos(featuredLogos)}
         </div>
-        <button
-          className="px-5 py-3 text-base md:text-lg bg-black text-white rounded-full shadow-md hover:scale-105 transition duration-300"
-        >
+        <button className="px-4 py-2 text-sm sm:text-base md:text-lg bg-black text-white rounded-full shadow-md hover:scale-105 transition duration-300">
           See More
         </button>
       </div>
