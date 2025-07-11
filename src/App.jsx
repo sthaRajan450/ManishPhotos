@@ -4,9 +4,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Works from "./pages/Works";
-import Services from "./pages/Services";
-import Contact from "./pages/Contact";
 import About from "./components/About";
+import Featured from "./pages/Featured";
 
 const App = () => {
   return (
@@ -17,7 +16,7 @@ const App = () => {
           licenseKey={"gplv3-license"}
           scrollingSpeed={700}
           navigation
-          anchors={["home", "about", "works", "services", "contact", "footer"]}
+          anchors={["home", "about", "works", "featured", "contact", "footer"]}
           render={() => (
             <ReactFullpage.Wrapper>
               <div className="section">
@@ -30,13 +29,11 @@ const App = () => {
                 <Works />
               </div>
               <div className="section">
-                <Services />
+                <Featured />
               </div>
+             
               <div className="section">
-                <Contact />
-              </div>
-              <div className="section">
-                <Footer /> {/* ✅ Moved inside the fullpage wrapper */}
+                <Footer />
               </div>
             </ReactFullpage.Wrapper>
           )}
